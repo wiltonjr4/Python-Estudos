@@ -1,6 +1,3 @@
-import self as self
-
-
 class conta:
     def __init__(self, titular, numero, saldo):
         self._titular = titular

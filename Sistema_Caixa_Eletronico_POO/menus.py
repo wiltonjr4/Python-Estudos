@@ -11,7 +11,20 @@ def entrada():
             \033[34m[ 2 ] ACESSAR CONTA\033[m
             \033[34m[ 3 ] ENCERRAR PROGRAMA\033[m ''')
         print('-=' * 9)
-        num = int(input('Digite um número: '))
+
+        while True:
+
+            try:
+                num = int(input('Digite um número: '))
+            except ValueError:
+                print('Valor Inválido')
+                continue
+
+            if num != 1 and num != 2 and num != 3:
+                print('Número inválido.. Tente Novamente..')
+            else:
+                break
+
         print('-=' * 9)
 
         if num == 1:
@@ -39,7 +52,14 @@ def entrada():
 
 
 def contaMenu():
-    numcont = int(input('Digite um número: '))
+
+    while True:
+        try:
+            numcont = int(input('Digite um número: '))
+        except ValueError:
+            print('Valor Inválido')
+            continue
+
     while True:
         print('-=' * 9)
         print(f'\033[32mConta de {contas[numcont].nome}, N°: {contas[numcont].numero}\033[m')
@@ -50,7 +70,13 @@ def contaMenu():
             \033[34m[ 4 ] TRANSFERIR\033[m
             \033[34m[ 5 ] SAIR DA CONTA\033[m''')
         print('-=' * 9)
-        dig = int(input('Digite um número: '))
+
+        while True:
+            try:
+                dig = int(input('Digite um número: '))
+            except ValueError:
+                print('Valor Inválido')
+                continue
 
         if dig == 1:
             print('-=' * 9)
